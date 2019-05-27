@@ -499,7 +499,7 @@ int zcallback( void * para, int n_column, char ** column_value, char ** column_n
     labelf.backgroundColor=[UIColor clearColor];
     
     labelok.hidden=true;
-    zduostr=@"";
+     zduostr=@"";
 
   // NSString *zsql=[NSString stringWithFormat:@"select * from [1jczz] where rowid=%d",z];
     AppDelegate *myDelegate = [[UIApplication sharedApplication] delegate];
