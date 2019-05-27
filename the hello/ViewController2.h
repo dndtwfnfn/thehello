@@ -21,7 +21,7 @@ UILabel *labele;
 UILabel *labelf;
 UILabel *labelok;
 UILabel *labelcount;
-    UICollectionView *zti;
+
 }
 @property (nonatomic,strong) UISwipeGestureRecognizer *leftSwipeGestureRecognizer;
 @property (nonatomic,strong) UISwipeGestureRecognizer *rightSwipeGestureRecognizer;

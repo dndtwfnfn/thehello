@@ -12,11 +12,18 @@
 
 @end
 
-@implementation AppDelegate
 
+
+@implementation AppDelegate
+@synthesize zselectid;
+@synthesize zindex;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [NSThread sleepForTimeInterval:2.0];//启动画面延时
+    [self.window makeKeyAndVisible];//启动画面延时
+    zselectid=@"1";
+    zindex=@"0";
     return YES;
 }
 
@@ -93,6 +100,8 @@
         NSLog(@"Unresolved error %@, %@", error, error.userInfo);
         abort();
     }
+    
 }
+
 
 @end

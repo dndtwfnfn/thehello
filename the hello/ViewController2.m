@@ -8,8 +8,9 @@
 
 #import "ViewController2.h"
 #import "sqlite3.h"
+#import "AppDelegate.h"
 @interface ViewController2 (){
-sqlite3 *sqlite;
+sqlite3 *sqlite2;
 //stmt用来取出查询结果
 
 NSString *zduostr;
@@ -20,15 +21,32 @@ int zcount;
 
 @implementation ViewController2
 
+-(void)viewWillAppear:(BOOL)animated{   //返回刷新页面
+    
+    [super viewWillAppear:animated];
+    
+    AppDelegate *myDelegate = [[UIApplication sharedApplication] delegate];
+
+    z= [myDelegate.zselectid intValue];
+    [self getrecord];
+    
+
+   
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    CGRect rect = [[UIScreen mainScreen] bounds];
-    CGSize size = rect.size;
-    CGFloat width = size.width;
-    CGFloat height = size.height;
-    CGFloat zheight=height/14;
+   
     
+   CGRect rect = [[UIScreen mainScreen] bounds];
+   CGSize size = rect.size;
+   CGFloat width = size.width;
+    CGFloat height = size.height;
+   
+  CGFloat zheight=height/14;
+   
     // Do any additional setup after loading the view, typically from a nib.
     UIButton * button=[UIButton buttonWithType:UIButtonTypeSystem];
    // button.frame=CGRectMake(10,490, 300, 30);
@@ -42,23 +60,21 @@ int zcount;
     //  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     // NSString *documentsDirectory = [paths objectAtIndex:0];
     // NSString *path = [documentsDirectory stringByAppendingPathComponent:@"database_name"];
-    // NSString *path=[[NSBundle mainBundle]pathForResource:@"zczsqlite" ofType:@"db"];
-  NSString *path=[[NSBundle mainBundle]pathForResource:@"xxkjb" ofType:@"db"];
+    //NSString *path=[[NSBundle mainBundle]pathForResource:@"zczsqlite" ofType:@"db"];
+    
+    NSString *path2=[[NSBundle mainBundle]pathForResource:@"xxkjb" ofType:@"db"];
     
     //  NSString *path=[[NSBundle mainBundle] pathForResource:@"data" ofType:@"sqlite"];
     //  NSString *filename=[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]stringByAppendingPathComponent:@"shop.sqlite"];
     
     //  int result=sqlite3_open([path cStringUsingEncoding:NSUTF8StringEncoding], &sqlite);
-    int result=sqlite3_open(path.UTF8String, &sqlite);
+    int result=sqlite3_open(path2.UTF8String, &sqlite2);
+    
     if (result==SQLITE_OK){
         NSLog(@"打开数据库成功");
         // UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"您好！" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         //[alert show];
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"2" preferredStyle:  UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            //点击按钮的响应事件；
-        }]];
-        [self presentViewController:alert animated:true completion:nil];
+        
         
     }
     else
@@ -66,44 +82,54 @@ int zcount;
         NSLog(@"打开失败");
         //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"不好意思！" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         //[alert show];
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"3" preferredStyle:  UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            //点击按钮的响应事件；
-        }]];
-        [self presentViewController:alert animated:true completion:nil];
+        
+        
+        
+        
+        //  UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"3" preferredStyle:  UIAlertControllerStyleAlert];
+        //   [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        //点击按钮的响应事件；
+        //  }]];
+        //  [self presentViewController:alert animated:true completion:nil];
     }
-    
-    
     z=0;
     
-   
     //char *errmsg;
     //获取记录
-    NSString *zsql = [NSString stringWithFormat:@"SELECT count(*) from [1jczz]"];
-    // NSString *zsql = [NSString stringWithFormat:@"SELECT count(*) from tk"];
-    const char *sql= [zsql cStringUsingEncoding:NSASCIIStringEncoding];
+    
+    AppDelegate *myDelegate = [[UIApplication sharedApplication] delegate];
+   // myDelegate.zindex=@"1";
+    NSString *zsql1;
+    
+    if ([myDelegate.zindex intValue]==1){
+    zsql1 = [NSString stringWithFormat:@"SELECT count(*) from [1jczz]"];
+    
+    }
+    else
+    {
+       zsql1 = [NSString stringWithFormat:@"SELECT count(*) from [2xxjs]"];
+    }
+    
+    //NSString *zsql = [NSString stringWithFormat:@"SELECT count(*) from tk"];
+    const char *sql1= [zsql1 cStringUsingEncoding:NSASCIIStringEncoding];
     sqlite3_stmt *stmt1;
-    int status = sqlite3_prepare_v2(sqlite, sql, -1, &stmt1, NULL);
+    int status = sqlite3_prepare_v2(sqlite2, sql1, -1, &stmt1, NULL);
     // int status = sqlite3_exec(sqlite,sql,zcallback,zcount,&errmsg);
     if(SQLITE_OK ==status){
         NSLog(@"打开数据库成功");
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"4" preferredStyle:  UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            //点击按钮的响应事件；
-        }]];
-        [self presentViewController:alert animated:true completion:nil];
+        
         
         sqlite3_step(stmt1);
         
         zcount=sqlite3_column_int(stmt1, 0);
         
         
-        zti=[[UICollectionView alloc]initWithFrame:CGRectMake(0,10,10,10)];
-       
+      
+        
         // CGFloat height = size.height;
         
-      //  zlabel=[[UILabel alloc]initWithFrame:CGRectMake(0, 30, width, 120)];
-         zlabel=[[UILabel alloc]initWithFrame:CGRectMake(0, 50, width, zheight*3)];
+        //  zlabel=[[UILabel alloc]initWithFrame:CGRectMake(0, 30, width, 120)];
+        zlabel=[[UILabel alloc]initWithFrame:CGRectMake(0, 80, width, zheight*3)];
         //zlabel.lineBreakMode=UILineBreakModeWordWrap;
         //zlabel.lineBreakMode=UILineBreakModeTailTruncation;
         zlabel.lineBreakMode= NSLineBreakByTruncatingTail;
@@ -121,14 +147,14 @@ int zcount;
         zlabelstyle.hidden=true;
         
         //labela=[[UILabel alloc]initWithFrame:CGRectMake(0, 150, width, 50)];
-        labela=[[UILabel alloc]initWithFrame:CGRectMake(10, zheight*3+50, width-20, zheight)];
+        labela=[[UILabel alloc]initWithFrame:CGRectMake(10, zheight*3+80, width-20, zheight)];
         labela.lineBreakMode=NSLineBreakByTruncatingTail;
         labela.numberOfLines=0;
         labela.adjustsFontSizeToFitWidth=YES;
         [self.view addSubview:labela];
         
         //labelb=[[UILabel alloc]initWithFrame:CGRectMake(0, 200, width, 50)];
-        labelb=[[UILabel alloc]initWithFrame:CGRectMake(10, zheight*4+50, width-20, zheight)];
+        labelb=[[UILabel alloc]initWithFrame:CGRectMake(10, zheight*4+80, width-20, zheight)];
         
         labelb.lineBreakMode=NSLineBreakByTruncatingTail;
         labelb.numberOfLines=0;
@@ -136,36 +162,36 @@ int zcount;
         [self.view addSubview:labelb];
         
         //labelc=[[UILabel alloc]initWithFrame:CGRectMake(0, 250, width, 50)];
-         labelc=[[UILabel alloc]initWithFrame:CGRectMake(10, zheight*5+50, width-20, zheight)];
+        labelc=[[UILabel alloc]initWithFrame:CGRectMake(10, zheight*5+80, width-20, zheight)];
         labelc.lineBreakMode=NSLineBreakByTruncatingTail;
         labelc.numberOfLines=0;
         labelc.adjustsFontSizeToFitWidth=YES;
         [self.view addSubview:labelc];
         
         //labeld=[[UILabel alloc]initWithFrame:CGRectMake(0, 300, width, 50)];
-         labeld=[[UILabel alloc]initWithFrame:CGRectMake(10, zheight*6+50, width-20, zheight)];
+        labeld=[[UILabel alloc]initWithFrame:CGRectMake(10, zheight*6+80, width-20, zheight)];
         labeld.lineBreakMode=NSLineBreakByTruncatingTail;
         labeld.numberOfLines=0;
         labeld.adjustsFontSizeToFitWidth=YES;
         [self.view addSubview:labeld];
         
         //labele=[[UILabel alloc]initWithFrame:CGRectMake(0, 350, width, 50)];
-         labele=[[UILabel alloc]initWithFrame:CGRectMake(10, zheight*7+50, width-20, zheight)];
+        labele=[[UILabel alloc]initWithFrame:CGRectMake(10, zheight*7+80, width-20, zheight)];
         labele.lineBreakMode=NSLineBreakByTruncatingTail;
         labele.numberOfLines=0;
         labele.adjustsFontSizeToFitWidth=YES;
         [self.view addSubview:labele];
         
-       // labelf=[[UILabel alloc]initWithFrame:CGRectMake(0, 400, width, 50)];
-         labelf=[[UILabel alloc]initWithFrame:CGRectMake(10, zheight*8+50, width-20, zheight)];
+        // labelf=[[UILabel alloc]initWithFrame:CGRectMake(0, 400, width, 50)];
+        labelf=[[UILabel alloc]initWithFrame:CGRectMake(10, zheight*8+80, width-20, zheight)];
         labelf.lineBreakMode=NSLineBreakByTruncatingTail;
         labelf.numberOfLines=0;
         labelf.adjustsFontSizeToFitWidth=YES;
         [self.view addSubview:labelf];
         
         
-       // labelok=[[UILabel alloc]initWithFrame:CGRectMake(0, 450, width, 50)];
-         labelok=[[UILabel alloc]initWithFrame:CGRectMake(10, zheight*9+50, width-20, zheight)];
+        // labelok=[[UILabel alloc]initWithFrame:CGRectMake(0, 450, width, 50)];
+        labelok=[[UILabel alloc]initWithFrame:CGRectMake(10, zheight*9+80, width-20, zheight)];
         labelok.lineBreakMode=NSLineBreakByTruncatingTail;
         labelok.numberOfLines=0;
         labelok.adjustsFontSizeToFitWidth=YES;
@@ -174,7 +200,7 @@ int zcount;
         
         
         // labelcount=[[UILabel alloc]initWithFrame:CGRectMake(width-100, 450, width, 50)];
-        labelcount=[[UILabel alloc]initWithFrame:CGRectMake(width-100, zheight*9+50, width-20, zheight)];
+        labelcount=[[UILabel alloc]initWithFrame:CGRectMake(width-100, zheight*9+80, width-20, zheight)];
         labelcount.lineBreakMode=NSLineBreakByTruncatingTail;
         labelcount.numberOfLines=0;
         labelcount.adjustsFontSizeToFitWidth=YES;
@@ -252,11 +278,15 @@ int zcount;
          
          [self.view addSubview:JGlabel];*/
         
-        
     }
-    
     // [NSThread sleepForTimeInterval:3.0];
     
+  //  AppDelegate *myDelegate = [[UIApplication sharedApplication] delegate];
+   
+   
+    //z=1;
+    z= [myDelegate.zselectid intValue];
+    [self getrecord];
 }
 int zcallback( void * para, int n_column, char ** column_value, char ** column_name )
 {
@@ -379,15 +409,39 @@ int zcallback( void * para, int n_column, char ** column_value, char ** column_n
     if (sender.direction == UISwipeGestureRecognizerDirectionLeft) {
         
         z=z+1;
-        
-        [self getrecord];
+        if (z>zcount){
+            
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"已经是最后一题了！" preferredStyle:  UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                //点击按钮的响应事件；
+            }]];
+            [self presentViewController:alert animated:true completion:nil];
+            z=zcount;
+        }
+        else if (z>0){
+            [self getrecord];
+        }
     }
     //右滑
     if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
-        
-        z=z-1;
-        if (z>0){
+         if (z>1){
+             z=z-1;
+       
             [self getrecord];
+        }
+        else if(z==1)
+        {
+            
+            [self getrecord];
+            z=0;
+        }
+        else
+        {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"已经是第一题了！" preferredStyle:  UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                //点击按钮的响应事件；
+            }]];
+            [self presentViewController:alert animated:true completion:nil];
         }
     }
     
@@ -405,26 +459,19 @@ int zcallback( void * para, int n_column, char ** column_value, char ** column_n
 - (IBAction)zsave:(id)sender {
     // UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Information" message:@"Hellworld" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     // [alert show];
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"按钮被点击了" preferredStyle:  UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        //点击按钮的响应事件；
-    }]];
-    [self presentViewController:alert animated:true completion:nil];
+  
 }
 - (IBAction)zleave:(id)sender {
     // UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"您好！" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     // [alert show];
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"按钮被点击了" preferredStyle:  UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        //点击按钮的响应事件；
-    }]];
-    [self presentViewController:alert animated:true completion:nil];
+   
 }
 
 -(IBAction)setupData:(id)sender{
     z=z+1;
-    
-    [self getrecord];
+    if (z>0){
+        [self getrecord];
+    }
 }
 -(IBAction)perpareData:(id)sender{
     
@@ -453,11 +500,23 @@ int zcallback( void * para, int n_column, char ** column_value, char ** column_n
     
     labelok.hidden=true;
     zduostr=@"";
-    // const char *sql="select * from tk where rowid=z";//查询sql语句
-    NSString *zsql=[NSString stringWithFormat:@"select * from [1jczz] where rowid=%d",z];
+
+  // NSString *zsql=[NSString stringWithFormat:@"select * from [1jczz] where rowid=%d",z];
+    AppDelegate *myDelegate = [[UIApplication sharedApplication] delegate];
+    NSString *zsql;
+      if ([myDelegate.zindex intValue]==1){
+        zsql = [NSString stringWithFormat:@"SELECT * from [1jczz] where rowid=%d",z];
+        
+    }
+    else
+    {
+        zsql = [NSString stringWithFormat:@"SELECT * from [2xxjs] where rowid=%d",z];
+        
+    }
+    
     const char *sql= [zsql cStringUsingEncoding:NSASCIIStringEncoding];
     sqlite3_stmt *stmt;
-    int status = sqlite3_prepare_v2(sqlite, sql, -1, &stmt, NULL);
+    int status = sqlite3_prepare_v2(sqlite2, sql, -1, &stmt, NULL);
     if(SQLITE_OK ==status){
         labela.text=@"";
         labelb.text=@"";
@@ -615,7 +674,7 @@ int zcallback( void * para, int n_column, char ** column_value, char ** column_n
             
         }
         
-        sqlite3_close(sqlite);
+        sqlite3_close(sqlite2);
         
     }
 }

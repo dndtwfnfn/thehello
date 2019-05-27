@@ -1,0 +1,15 @@
+//
+//  ViewController4.h
+//  the hello
+//
+//  Created by 臧 传志 on 2019/5/27.
+//  Copyright © 2019年 臧 传志. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface ViewController4 : UIViewController
+- (IBAction)btn1click:(id)sender;
+- (IBAction)btn2click:(id)sender;
+
+@end

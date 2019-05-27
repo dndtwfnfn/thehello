@@ -10,7 +10,14 @@
 #import <CoreData/CoreData.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+{
+    
+    NSString *zselectid;
+    NSString *zindex;
+}
 
+@property (nonatomic, retain) NSString *zselectid;
+@property (nonatomic, retain) NSString *zindex;
 @property (strong, nonatomic) UIWindow *window;
 
 @property (readonly, strong) NSPersistentContainer *persistentContainer;

@@ -7,12 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD02BFFB2189B21A005AACF7 /* zczsqlite.db in Resources */ = {isa = PBXBuildFile; fileRef = AD02BFFA2189B21A005AACF7 /* zczsqlite.db */; };
+		AD3E804F22890D7B00C1DF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADF66B54217D509D00377594 /* LaunchScreen.storyboard */; };
+		AD3E8066228924AD00C1DF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD4BF6B7218FBDE80022270C /* Assets.xcassets */; };
+		AD3E80682289252A00C1DF73 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = AD3E80672289252A00C1DF73 /* AppIcon.appiconset */; };
+		AD817053228AB679001A3BCD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD817052228AB679001A3BCD /* Default-568h@2x.png */; };
+		AD9646E1229423AD00E7020A /* xxkjb.db in Resources */ = {isa = PBXBuildFile; fileRef = AD9646E0229423AD00E7020A /* xxkjb.db */; };
+		ADA629C421868E6200C0BA05 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA629C321868E6200C0BA05 /* libsqlite3.tbd */; };
+		ADDC7395228B9A020063E074 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADF66B4C217D509D00377594 /* Main.storyboard */; };
+		ADDF57C42296269000A5D5AE /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDF57C32296269000A5D5AE /* ViewController3.m */; };
+		ADDF57C72296488000A5D5AE /* cellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDF57C62296487F00A5D5AE /* cellItem.m */; };
+		ADED58B0229B742500DD3BB7 /* ViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = ADED58AF229B742500DD3BB7 /* ViewController4.m */; };
+		ADED58B3229B963600DD3BB7 /* ViewController6.m in Sources */ = {isa = PBXBuildFile; fileRef = ADED58B2229B963600DD3BB7 /* ViewController6.m */; };
+		ADEFC89D22942674006BF189 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = AD60FBAD21930F8F00DC285D /* ViewController2.m */; };
 		ADF66B48217D509D00377594 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF66B47217D509D00377594 /* AppDelegate.m */; };
 		ADF66B4B217D509D00377594 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF66B4A217D509D00377594 /* ViewController.m */; };
-		ADF66B4E217D509D00377594 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADF66B4C217D509D00377594 /* Main.storyboard */; };
 		ADF66B51217D509D00377594 /* the_hello.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ADF66B4F217D509D00377594 /* the_hello.xcdatamodeld */; };
-		ADF66B53217D509D00377594 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADF66B52217D509D00377594 /* Assets.xcassets */; };
-		ADF66B56217D509D00377594 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADF66B54217D509D00377594 /* LaunchScreen.storyboard */; };
 		ADF66B59217D509D00377594 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF66B58217D509D00377594 /* main.m */; };
 		ADF66B63217D509D00377594 /* the_helloTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF66B62217D509D00377594 /* the_helloTests.m */; };
 		ADF66B6E217D509D00377594 /* the_helloUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF66B6D217D509D00377594 /* the_helloUITests.m */; };
@@ -36,21 +46,37 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		ADF66B43217D509D00377594 /* the hello.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "the hello.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD02BFFA2189B21A005AACF7 /* zczsqlite.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = zczsqlite.db; path = ../zczsqlite.db; sourceTree = "<group>"; };
+		AD3E805F2289199200C1DF73 /* the hello.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "the hello.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD3E80672289252A00C1DF73 /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
+		AD4BF6B7218FBDE80022270C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Volumes/os2/myxcode/the hello/the hello/Assets.xcassets"; sourceTree = "<absolute>"; };
+		AD60FBAC21930F8F00DC285D /* ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		AD60FBAD21930F8F00DC285D /* ViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		AD817052228AB679001A3BCD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		AD9646E0229423AD00E7020A /* xxkjb.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = xxkjb.db; path = ../xxkjb.db; sourceTree = "<group>"; };
+		ADA629C321868E6200C0BA05 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		ADDF57C22296269000A5D5AE /* ViewController3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
+		ADDF57C32296269000A5D5AE /* ViewController3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
+		ADDF57C52296487F00A5D5AE /* cellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cellItem.h; sourceTree = "<group>"; };
+		ADDF57C62296487F00A5D5AE /* cellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cellItem.m; sourceTree = "<group>"; };
+		ADE3754E22897B2700C96A66 /* the helloTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "the helloTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADE3754F22897B2700C96A66 /* the helloUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "the helloUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADED58AE229B742500DD3BB7 /* ViewController4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController4.h; sourceTree = "<group>"; };
+		ADED58AF229B742500DD3BB7 /* ViewController4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController4.m; sourceTree = "<group>"; };
+		ADED58B1229B963600DD3BB7 /* ViewController6.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController6.h; sourceTree = "<group>"; };
+		ADED58B2229B963600DD3BB7 /* ViewController6.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController6.m; sourceTree = "<group>"; };
+		ADEFC89E229426A8006BF189 /* xxkjb.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = xxkjb.db; sourceTree = "<group>"; };
 		ADF66B46217D509D00377594 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		ADF66B47217D509D00377594 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		ADF66B49217D509D00377594 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		ADF66B4A217D509D00377594 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		ADF66B4D217D509D00377594 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ADF66B50217D509D00377594 /* the_hello.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = the_hello.xcdatamodel; sourceTree = "<group>"; };
-		ADF66B52217D509D00377594 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADF66B55217D509D00377594 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADF66B57217D509D00377594 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADF66B58217D509D00377594 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		ADF66B5E217D509D00377594 /* the helloTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "the helloTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADF66B62217D509D00377594 /* the_helloTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = the_helloTests.m; sourceTree = "<group>"; };
 		ADF66B64217D509D00377594 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ADF66B69217D509D00377594 /* the helloUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "the helloUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADF66B6D217D509D00377594 /* the_helloUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = the_helloUITests.m; sourceTree = "<group>"; };
 		ADF66B6F217D509D00377594 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADA629C421868E6200C0BA05 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,39 +107,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ADA629C221868E6200C0BA05 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ADA629C321868E6200C0BA05 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ADF66B3A217D509D00377594 = {
 			isa = PBXGroup;
 			children = (
+				AD9646E0229423AD00E7020A /* xxkjb.db */,
+				AD817052228AB679001A3BCD /* Default-568h@2x.png */,
+				AD02BFFA2189B21A005AACF7 /* zczsqlite.db */,
 				ADF66B45217D509D00377594 /* the hello */,
 				ADF66B61217D509D00377594 /* the helloTests */,
 				ADF66B6C217D509D00377594 /* the helloUITests */,
-				ADF66B44217D509D00377594 /* Products */,
+				ADA629C221868E6200C0BA05 /* Frameworks */,
+				AD3E805F2289199200C1DF73 /* the hello.app */,
+				ADE3754E22897B2700C96A66 /* the helloTests.xctest */,
+				ADE3754F22897B2700C96A66 /* the helloUITests.xctest */,
 			);
-			sourceTree = "<group>";
-		};
-		ADF66B44217D509D00377594 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				ADF66B43217D509D00377594 /* the hello.app */,
-				ADF66B5E217D509D00377594 /* the helloTests.xctest */,
-				ADF66B69217D509D00377594 /* the helloUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		ADF66B45217D509D00377594 /* the hello */ = {
 			isa = PBXGroup;
 			children = (
+				ADDF57C52296487F00A5D5AE /* cellItem.h */,
+				ADDF57C62296487F00A5D5AE /* cellItem.m */,
+				ADEFC89E229426A8006BF189 /* xxkjb.db */,
+				AD3E80672289252A00C1DF73 /* AppIcon.appiconset */,
+				AD4BF6B7218FBDE80022270C /* Assets.xcassets */,
 				ADF66B46217D509D00377594 /* AppDelegate.h */,
 				ADF66B47217D509D00377594 /* AppDelegate.m */,
 				ADF66B49217D509D00377594 /* ViewController.h */,
 				ADF66B4A217D509D00377594 /* ViewController.m */,
+				AD60FBAC21930F8F00DC285D /* ViewController2.h */,
+				AD60FBAD21930F8F00DC285D /* ViewController2.m */,
+				ADDF57C22296269000A5D5AE /* ViewController3.h */,
+				ADDF57C32296269000A5D5AE /* ViewController3.m */,
 				ADF66B4C217D509D00377594 /* Main.storyboard */,
-				ADF66B52217D509D00377594 /* Assets.xcassets */,
 				ADF66B54217D509D00377594 /* LaunchScreen.storyboard */,
 				ADF66B57217D509D00377594 /* Info.plist */,
 				ADF66B58217D509D00377594 /* main.m */,
 				ADF66B4F217D509D00377594 /* the_hello.xcdatamodeld */,
+				ADED58AE229B742500DD3BB7 /* ViewController4.h */,
+				ADED58AF229B742500DD3BB7 /* ViewController4.m */,
+				ADED58B1229B963600DD3BB7 /* ViewController6.h */,
+				ADED58B2229B963600DD3BB7 /* ViewController6.m */,
 			);
 			path = "the hello";
 			sourceTree = "<group>";
@@ -152,7 +195,7 @@
 			);
 			name = "the hello";
 			productName = "the hello";
-			productReference = ADF66B43217D509D00377594 /* the hello.app */;
+			productReference = AD3E805F2289199200C1DF73 /* the hello.app */;
 			productType = "com.apple.product-type.application";
 		};
 		ADF66B5D217D509D00377594 /* the helloTests */ = {
@@ -170,7 +213,7 @@
 			);
 			name = "the helloTests";
 			productName = "the helloTests";
-			productReference = ADF66B5E217D509D00377594 /* the helloTests.xctest */;
+			productReference = ADE3754E22897B2700C96A66 /* the helloTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		ADF66B68217D509D00377594 /* the helloUITests */ = {
@@ -188,7 +231,7 @@
 			);
 			name = "the helloUITests";
 			productName = "the helloUITests";
-			productReference = ADF66B69217D509D00377594 /* the helloUITests.xctest */;
+			productReference = ADE3754F22897B2700C96A66 /* the helloUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -225,7 +268,7 @@
 				Base,
 			);
 			mainGroup = ADF66B3A217D509D00377594;
-			productRefGroup = ADF66B44217D509D00377594 /* Products */;
+			productRefGroup = ADF66B3A217D509D00377594;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -241,9 +284,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADF66B56217D509D00377594 /* LaunchScreen.storyboard in Resources */,
-				ADF66B53217D509D00377594 /* Assets.xcassets in Resources */,
-				ADF66B4E217D509D00377594 /* Main.storyboard in Resources */,
+				AD02BFFB2189B21A005AACF7 /* zczsqlite.db in Resources */,
+				AD3E8066228924AD00C1DF73 /* Assets.xcassets in Resources */,
+				AD3E80682289252A00C1DF73 /* AppIcon.appiconset in Resources */,
+				ADDC7395228B9A020063E074 /* Main.storyboard in Resources */,
+				AD3E804F22890D7B00C1DF73 /* LaunchScreen.storyboard in Resources */,
+				AD817053228AB679001A3BCD /* Default-568h@2x.png in Resources */,
+				AD9646E1229423AD00E7020A /* xxkjb.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,8 +317,13 @@
 			files = (
 				ADF66B4B217D509D00377594 /* ViewController.m in Sources */,
 				ADF66B51217D509D00377594 /* the_hello.xcdatamodeld in Sources */,
+				ADED58B3229B963600DD3BB7 /* ViewController6.m in Sources */,
+				ADDF57C42296269000A5D5AE /* ViewController3.m in Sources */,
+				ADEFC89D22942674006BF189 /* ViewController2.m in Sources */,
 				ADF66B59217D509D00377594 /* main.m in Sources */,
 				ADF66B48217D509D00377594 /* AppDelegate.m in Sources */,
+				ADDF57C72296488000A5D5AE /* cellItem.m in Sources */,
+				ADED58B0229B742500DD3BB7 /* ViewController4.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,12 +486,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YSA5HS343R;
 				INFOPLIST_FILE = "the hello/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "rznfh.the-hello";
+				PRODUCT_BUNDLE_IDENTIFIER = rzzczmyks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -447,12 +503,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YSA5HS343R;
 				INFOPLIST_FILE = "the hello/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "rznfh.the-hello";
+				PRODUCT_BUNDLE_IDENTIFIER = rzzczmyks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
